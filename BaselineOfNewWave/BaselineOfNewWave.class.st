@@ -22,10 +22,9 @@ BaselineOfNewWave >> baseline: spec [
 				package: 'NewWave-Server' with: [ spec requires: #('NewWave-Core') ].
 				
 			"Groups"
-			spec group: 'default' with: #(All).
+			spec group: 'default' with: #(Core Visualization).
 			spec group: 'Core' with: #('NewWave-Core' 'NewWave-Core-Tests').
-			spec group: 'Visualization' with: #(Core 'NewWave-Roassal').
-			spec group: 'All' with: #(Core 'NewWave-Plugin' Visualization) ].
+			spec group: 'Visualization' with: #(Core 'NewWave-Roassal') ].
 	
 
 ]
