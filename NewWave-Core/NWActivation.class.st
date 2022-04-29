@@ -5,9 +5,7 @@ Class {
 		'node',
 		'executor',
 		'properties',
-		'state',
-		'activated',
-		'completed'
+		'state'
 	],
 	#category : #'NewWave-Core-Engine'
 }
@@ -18,29 +16,8 @@ NWActivation class >> node: aNode executor: anExecutor [
 ^ self new 
 	node: aNode;
 	executor: anExecutor;
-	activated: false;
-	completed: false;
+	state: #initialized;
 	yourself
-]
-
-{ #category : #accessing }
-NWActivation >> activated [
-	^ activated 
-]
-
-{ #category : #accessing }
-NWActivation >> activated: aBoolean [
-	activated := aBoolean
-]
-
-{ #category : #accessing }
-NWActivation >> completed [
-	^ completed
-]
-
-{ #category : #accessing }
-NWActivation >> completed: aBoolean [
-	completed := aBoolean
 ]
 
 { #category : #accessing }
@@ -57,6 +34,16 @@ NWActivation >> executor: anExecutor [
 NWActivation >> initialize [ 
 	super initialize.
 	properties := Dictionary new.
+]
+
+{ #category : #accessing }
+NWActivation >> isActivated [
+	^ state = #activated
+]
+
+{ #category : #accessing }
+NWActivation >> isCompleted [
+	^ state = #completed
 ]
 
 { #category : #accessing }

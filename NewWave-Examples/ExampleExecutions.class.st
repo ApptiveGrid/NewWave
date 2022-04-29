@@ -26,7 +26,6 @@ ExampleExecutions class >> returnAcmeManagement [
 ExampleExecutions class >> returnBoundaryEventProcess [
 "This example uses two parallel gateways, where both paths are taken, and uses two joines. "
 	| se ee t1 t2 t3 we split1 engine be te process |
-TKTDebugger disable.
 	se := NWStartEvent new.
 	se description: #NWStartEvent.
 
@@ -1182,7 +1181,6 @@ ExampleExecutions >> startExample8IntermediateCatchEvent [
 ExampleExecutions >> startExample9BoundaryEvent [
 "This example uses two parallel gateways, where both paths are taken, and uses two joines. "
 	| se ee t1 t2 t3 we split1 engine be te |
-TKTDebugger disable.
 	se := NWStartEvent new.
 	se description: #NWStartEvent.
 

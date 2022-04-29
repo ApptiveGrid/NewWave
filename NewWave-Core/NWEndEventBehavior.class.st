@@ -15,8 +15,8 @@ NWEndEventBehavior >> performExecution: elemToExecute executor: waveExecutor [
 
 	('Ending worker on process '
 		, Processor activeProcess identityHash asString) traceCr.
-	('Worker process is ' , waveExecutor worker process identityHash asString)
-		traceCr.
+	"('Worker process is ' , waveExecutor worker process identityHash asString)
+		traceCr."
 	"wave workList addToCompleted: (wave activationForNode: elemToExecute)."
 	"wave engine workList completed asString logCr.
 	wave engine workList running asString logCr."
@@ -25,5 +25,5 @@ NWEndEventBehavior >> performExecution: elemToExecute executor: waveExecutor [
 	waveExecutor processHandler mainExecutor = waveExecutor
 		ifTrue: [ "wave engine scheduler stop."  ].
 	waveExecutor processHandler processScheduler stop.
-	waveExecutor worker stop
+	"waveExecutor worker stop"
 ]

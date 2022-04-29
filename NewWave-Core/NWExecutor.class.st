@@ -79,8 +79,7 @@ NWExecutor >> activations [
 
 { #category : #running }
 NWExecutor >> execute: elem [
-	| elemHandler executor |
-	self halt.
+	| executor |
 	"elemHandler := NWBehaviorHandler new."
 	executor := elem behaviorClass new.
 	"The idea is that it could be invoked later, or if activation has already been made or should continue after the interruption."
@@ -167,7 +166,7 @@ NWExecutor >> tryToExecuteNext: aCompletedNode [
 	"So this should happen once, when the element should be activated and executed"
 	"self newActivationForNode: tmp."
 	"TODO: Ovo sam dodao i zaustavljanje procesa radi... za sada proveri i dalje..."
-	self worker schedule: [ self execute: tmp.].
+	"self worker schedule: [" self execute: tmp."]."
 ]
 
 { #category : #accessing }

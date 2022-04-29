@@ -9,19 +9,14 @@ Class {
 
 { #category : #adding }
 NWWorkList >> addToCompleted: activation [
-	activation completed: true.
-	"Proveriti da li je vec aktivacija pocela, ako je pocela podigni error
-	running remove: activation.
-	completed add: activation."
-	
-	"Treba zabaleziti za istoriju.... noteRunOf: anActivation in: self"
+	activation state: #completed
 ]
 
 { #category : #adding }
 NWWorkList >> addToRunning: activation [
 	"Proveriti da li je vec aktivacija pocela, ako je pocela podigni error"
 	"running add: activation"
-	activation activated: true.
+	activation state: #activated.
 	running indexOf: activation ifAbsent: [ running add: activation ].
 	"Treba zabaleziti za istoriju.... noteRunOf: anActivation in: self"
 	
@@ -29,7 +24,7 @@ NWWorkList >> addToRunning: activation [
 
 { #category : #adding }
 NWWorkList >> completed [
-	^ running select: [ :each | each completed ]
+	^ running select: [ :each | each isCompleted ]
 ]
 
 { #category : #adding }
@@ -46,5 +41,5 @@ NWWorkList >> printOn: aStream [
 
 { #category : #adding }
 NWWorkList >> running [
-	^ running select: [ :each | each activated ].
+	^ running select: [ :each | each isActivated ].
 ]
