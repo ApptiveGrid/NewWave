@@ -2,6 +2,17 @@
 
 Workflow engine written in Pharo. Still in early development. 
 
+## Installation
+
+You can load NewWave now using metacello as follows:
+
+```smalltalk
+Metacello new
+  baseline: #NewWave;
+  repository: 'github://ApptiveGrid/NewWave:master';
+  onConflictUseIncoming;
+  load.
+```
 
 ## Video tutorial
 
@@ -200,29 +211,6 @@ e startExample1.
 
 Output of the examples is in the `Transcript` for now.
 
-
-## Installation
-
-You can load NewWave now using metacello as follows:
-
-```smalltalk
-Metacello new
-  baseline: #NewWave;
-  repository: 'github://skaplar/NewWave:master';
-  onConflictUseIncoming;
-  load.
-```
-
-
-# NewWaveFieldUserTask
-Web Application for Workflow engine written in Pharo
-This application should represent a web app that is an extention to a NewWave framework.
-
-This app should be started in Playground with command:
-
-    FUApplicationRootComponent initialize.
-    FUApplication createDemo.
-    
 # Additional examples
 1. https://1drv.ms/v/s!AtyGLaEfarFQgoca6Ni6OZor4ldycw?e=51RyYK (https://www.stakeholdermap.com/bpm/posting-job-notification-business-process-model.html)
 2.  https://1drv.ms/v/s!AtyGLaEfarFQgocceSePKwfDe7o-mw?e=WomYXC (https://www.stakeholdermap.com/bpm/business-process-model-payment-process.html)
