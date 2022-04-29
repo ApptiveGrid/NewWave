@@ -36,6 +36,7 @@ BehaviorsTest >> tearDown [
 { #category : #tests }
 BehaviorsTest >> testStartEvent [
 	| seBehavior |
+	self skip.
 	seBehavior := NWStartEventBehavior new.
 	seBehavior performExecution: waveExecutor flowHandler node executor: waveExecutor.
 	waveExecutor waveAnnouncer announce: StartAnnouncer new.
