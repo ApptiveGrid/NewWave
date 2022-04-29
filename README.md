@@ -200,16 +200,6 @@ Output will look something like:
 
 After starting the execution, both task t1 and t2 will start executing. Task t1 will complete first and the message `'Executor not completed'` will be shown when the first branch completes and reaches the join. Join will wait for all the incoming branches to complete. At the time Task2 wasn't completed so it will execute 10 more times, 20 in total when the message `'Executor completed'` shows, and the whole execution completes.
 
-Additional examples are in the `ExampleExecutions` class. 
-We execute example by calling
-
-```smalltalk
-| e |
-e := ExampleExecutions new.
-e startExample1.
-```
-
-Output of the examples is in the `Transcript` for now.
 
 # Additional examples
 1. https://1drv.ms/v/s!AtyGLaEfarFQgoca6Ni6OZor4ldycw?e=51RyYK (https://www.stakeholdermap.com/bpm/posting-job-notification-business-process-model.html)
