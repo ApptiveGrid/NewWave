@@ -113,40 +113,6 @@ NWProcessHandler >> addSubExecutor: anInitialSequence [
 	subExecutors add: se.
 ]
 
-{ #category : #adding }
-NWProcessHandler >> addTaskToServer: nWClassDecsription [
-		"Ovo je bilo kada sam slao objekte instanci klasa, sada vec saljem NewWaveDOClassDescription kada pokrenem model."
-		"dataObject := task dataOutputAssociations first valuedDataObject.
-		nWClassDecsription := (NWClassDescriptionGenerator dataObject: dataObject) createClassDescription."
-		"nWClassDecsription := task dataOutputAssociations first valuedDataObject."
-		nWClassDecsription processName: process name.
-		nWClassDecsription processId: process id.
-		nWClassDecsription processInstanceId: process processInstanceId.
-		"nWClassDecsription taskName: task name.
-		nWClassDecsription taskDescription: task description.
-		nWClassDecsription userName: task user username.
-		nWClassDecsription groupName: task group groupName.
-		nWClassDecsription taskId: task id."
-		engine server addTaskWrapper: nWClassDecsription.
-		^ nWClassDecsription.
-]
-
-{ #category : #adding }
-NWProcessHandler >> addTaskToServer: task nwClassDescription: nWClassDecsription [
-
-		nWClassDecsription processName: process name.
-		nWClassDecsription processId: process id.
-		nWClassDecsription processInstanceId: process processInstanceId.
-		nWClassDecsription taskName: task name.
-		nWClassDecsription taskDescription: task description.
-		nWClassDecsription userName: task user username.
-		nWClassDecsription groupName: task group groupName.
-		nWClassDecsription taskId: task id.
-		
-		engine server addTaskWrapper: nWClassDecsription.
-		^ nWClassDecsription.
-]
-
 { #category : #accessing }
 NWProcessHandler >> engine [
 	^ engine
@@ -174,7 +140,7 @@ NWProcessHandler >> initialize [
 	self subExecutors: OrderedCollection new.
 	self engineAnnouncer: Announcer new.
 	workList := NWWorkList new.
-	activations := Dictionary new.
+	activations := OrderedDictionary new.
 	processScheduler := TaskScheduler new.
 ]
 
@@ -186,13 +152,6 @@ NWProcessHandler >> joinHandler [
 { #category : #accessing }
 NWProcessHandler >> joinHandler: aJoinHandler [
 	joinHandler := aJoinHandler 
-]
-
-{ #category : #accessing }
-NWProcessHandler >> logNewActivation: anActivation on: anExecutor forNode: aNode [
-"TODO when adding a history"
-
-
 ]
 
 { #category : #accessing }
@@ -224,7 +183,7 @@ NWProcessHandler >> processScheduler [
 NWProcessHandler >> startProcess [
 	processScheduler start.
 	mainExecutor tryToExecuteNext.
-	mainExecutor waveAnnouncer announce: StartAnnouncer new.
+	"mainExecutor waveAnnouncer announce: StartAnnouncer new."
 ]
 
 { #category : #accessing }

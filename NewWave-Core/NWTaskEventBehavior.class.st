@@ -11,13 +11,13 @@ Class {
 NWTaskEventBehavior >> performExecution: elemToExecute executor: waveExecutor [
 	| aFuture tktElem |
 	super performExecution: elemToExecute executor: waveExecutor.
-	tktElem := waveExecutor returnTKT: elemToExecute.
+	"tktElem := waveExecutor returnTKT: elemToExecute.
 	aFuture := waveExecutor worker future: [ tktElem valuable ].
 	aFuture
-		onSuccessDo: [ :v | 
-			waveExecutor taskResult: v.
-			waveExecutor tryToExecuteNext: elemToExecute ].
-	aFuture
+		onSuccessDo: [ :v | "
+			waveExecutor taskResult: elemToExecute value.
+			waveExecutor tryToExecuteNext: elemToExecute "]".
+"	aFuture
 		onFailureDo: [ :v | 
-			Transcript show: 'failed'; cr]
+			Transcript show: 'failed'; cr]"
 ]

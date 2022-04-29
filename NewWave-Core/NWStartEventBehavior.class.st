@@ -9,12 +9,12 @@ Class {
 
 { #category : #'as yet unclassified' }
 NWStartEventBehavior >> performExecution: elemToExecute executor: waveExecutor [
-	waveExecutor waveAnnouncer
+	"waveExecutor waveAnnouncer
 		when: StartAnnouncer
 		do: [ | worker aRunner |
-			"aRunner := TKTNewProcessTaskRunner new.
+			""aRunner := TKTNewProcessTaskRunner new.
 			aRunner schedule: [ 
-				I want to examine this more thoroughly"
+				I want to examine this more thoroughly""
 			worker := TKTWorker new.
 			worker start.
 			('Starting worker on process '
@@ -22,7 +22,7 @@ NWStartEventBehavior >> performExecution: elemToExecute executor: waveExecutor [
 			('Worker process is ' , worker process identityHash asString)
 				traceCr.
 			waveExecutor workers at: worker name put: worker.
-			waveExecutor flowHandler workerid: worker name.
-			waveExecutor tryToExecuteNext: elemToExecute ]
+			waveExecutor flowHandler workerid: worker name."
+			waveExecutor tryToExecuteNext: elemToExecute "]"
 		" ]. "
 ]
