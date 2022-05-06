@@ -9,7 +9,6 @@ Class {
 
 { #category : #'as yet unclassified' }
 NWTaskEventBehavior >> performExecution: elemToExecute executor: waveExecutor [
-	| aFuture tktElem |
 	super performExecution: elemToExecute executor: waveExecutor.
 	"tktElem := waveExecutor returnTKT: elemToExecute.
 	aFuture := waveExecutor worker future: [ tktElem valuable ].

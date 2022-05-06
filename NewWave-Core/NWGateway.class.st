@@ -10,9 +10,6 @@ I am a Gateway, and I'm here to support different types of Gateways. As a gatewa
 Class {
 	#name : #NWGateway,
 	#superclass : #NWNode,
-	#instVars : [
-		'element'
-	],
 	#category : #'NewWave-Core-Core'
 }
 

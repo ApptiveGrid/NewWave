@@ -13,8 +13,6 @@ Class {
 	#name : #NWBoundaryEvent,
 	#superclass : #NWEvent,
 	#instVars : [
-		'attachedToRef',
-		'attechedToRefId',
 		'cancelActivity'
 	],
 	#category : #'NewWave-Core-Core'
