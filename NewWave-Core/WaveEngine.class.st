@@ -36,7 +36,6 @@ Class {
 	#instVars : [
 		'engineAnnouncer',
 		'scheduler',
-		'pluginData',
 		'processHandlers'
 	],
 	#category : #'NewWave-Core-Engine'
@@ -90,7 +89,6 @@ WaveEngine >> engineAnnouncer: anAnnouncer [
 WaveEngine >> initialize [
 	super initialize.
 	self engineAnnouncer: Announcer new.
-	pluginData := Dictionary new.
 	processHandlers := Dictionary new.
 	"scheduler := TaskScheduler new.
 	scheduler start."

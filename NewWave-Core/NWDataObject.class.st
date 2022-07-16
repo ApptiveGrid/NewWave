@@ -13,8 +13,6 @@ I am a data object in the workflow. I can hold any Pharo object as a value to pa
 Class {
 	#name : #NWDataObject,
 	#superclass : #NWElement,
-	#traits : 'TItemAwareElementTrait',
-	#classTraits : 'TItemAwareElementTrait classTrait',
 	#instVars : [
 		'itemDef',
 		'valuedDataObject',
@@ -29,11 +27,6 @@ NWDataObject >> initialize [
 	self initializeTrait.
 	itemDef := NWItemDefinition new.
 	
-]
-
-{ #category : #initialization }
-NWDataObject >> initializeTrait [
-	itemDefinition := NWItemDefinition new.
 ]
 
 { #category : #accessing }

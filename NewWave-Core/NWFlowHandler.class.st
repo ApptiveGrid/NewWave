@@ -16,7 +16,6 @@ Class {
 	#instVars : [
 		'node',
 		'workerid',
-		'currSeq',
 		'sequences'
 	],
 	#category : #'NewWave-Core-Engine'
@@ -25,16 +24,6 @@ Class {
 { #category : #accessing }
 NWFlowHandler >> addSequence: aSeq [
 	sequences add: aSeq
-]
-
-{ #category : #accessing }
-NWFlowHandler >> currSeq [
-	^ currSeq
-]
-
-{ #category : #accessing }
-NWFlowHandler >> currSeq: aSequence [
-	currSeq := aSequence
 ]
 
 { #category : #accessing }
@@ -48,7 +37,7 @@ NWFlowHandler >> getNextElement [
 		seq := node outgoingFlows first.
 		sequences add: seq.
 		seq ifNil: [ self error: 'Outgoing seq in flow handler is Nil. This should not happend.'  ] 
-			ifNotNil: [ self node: seq targetRef. self currSeq: seq. ^ seq sourceRef. ]. 
+			ifNotNil: [ self node: seq targetRef.  ^ seq sourceRef. ]. 
 	] 
 	ifEmpty: [ 
 		self node: NWNullNode new.

@@ -30,7 +30,7 @@ BehaviorsTest >> setUp [
 BehaviorsTest >> tearDown [ 
 	super tearDown.
 	waveExecutor workers valuesDo: [ :each | each stop ].
-	waveExecutor waveAnnouncer unsubscribe: StartAnnouncer.
+
 ]
 
 { #category : #tests }
@@ -39,7 +39,6 @@ BehaviorsTest >> testStartEvent [
 	self skip.
 	seBehavior := NWStartEventBehavior new.
 	seBehavior performExecution: waveExecutor flowHandler node executor: waveExecutor.
-	waveExecutor waveAnnouncer announce: StartAnnouncer new.
 	self assert: waveExecutor workers size equals: 1.
 	
 ]

@@ -59,16 +59,6 @@ NWProcessHandler class >> initialNode: startNode [
 ]
 
 { #category : #'as yet unclassified' }
-NWProcessHandler class >> initialProcess: aProcess [
-	| we | 
-	we := NWExecutor initialNode: aProcess initialFlowElement.
-	^ self new 
-		addExecutor: we;
-		process: aProcess;
-		yourself.
-]
-
-{ #category : #'as yet unclassified' }
 NWProcessHandler class >> initialProcess: aProcess engine: anEngine [
 	| we | 
 	we := NWExecutor initialNode: aProcess initialFlowElement.
@@ -142,11 +132,6 @@ NWProcessHandler >> initialize [
 	workList := NWWorkList new.
 	activations := OrderedDictionary new.
 	processScheduler := TaskScheduler new.
-]
-
-{ #category : #accessing }
-NWProcessHandler >> joinHandler [
-	^ joinHandler 
 ]
 
 { #category : #accessing }
